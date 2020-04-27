@@ -1,0 +1,57 @@
+public static void main(String[] args) {
+
+		List<String> arrayList=new ArrayList<String>();
+
+		arrayList.add("chennai");
+		arrayList.add(0, "karur");
+		arrayList.add("Harur");
+		arrayList.add("Harur");
+		arrayList.add("Null");
+
+		System.out.println(arrayList);//[karur, chennai, Harur, Harur, Null]
+		System.out.println(arrayList.get(1));//chennai
+		System.out.println(arrayList.indexOf("Harur"));//2
+		System.out.println(arrayList.lastIndexOf("Harur"));//3
+		System.out.println(arrayList.indexOf("erode"));//-1
+
+		List<String> arrayList1=new ArrayList<String>();
+		arrayList1.addAll(arrayList);// To copy arrayList
+		System.out.println(arrayList1);//[karur, chennai, Harur, Harur, Null]
+
+		arrayList1.clear();
+		System.out.println(arrayList1);//[]
+
+		arrayList.remove(0);//Based on Index
+		arrayList.remove("Harur");// Based on Object
+		System.out.println(arrayList);//[chennai, Harur, Null]
+
+		arrayList.set(2,"karur");//To update existing Element
+		System.out.println(arrayList);//[chennai, Harur, karur]
+
+		System.out.println(arrayList.isEmpty());//false
+
+		//Iterate Using ForEach loop
+		for (String string : arrayList) {
+			System.out.println(string);
+
+		}
+		// Iterate Using For Loop
+		for (int i = 0; i < arrayList.size(); i++) {
+			System.out.println(arrayList.get(i));
+		}
+
+		// Iterate the elements Using Interface "ListIterator"
+		ListIterator<String> iterate=arrayList.listIterator();
+		while(iterate.hasNext()) {
+			System.out.println(iterate.next());
+		}
+		while(iterate.hasPrevious()) {
+			System.out.println(iterate.previous());
+		}
+
+		//Iterate the elements Using Interface "Iterator"
+		Iterator<String> iterator1=arrayList.iterator();
+		//It has No Previos
+		while(iterator1.hasNext()) {
+			System.out.println(iterator1.next());
+		}
